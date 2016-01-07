@@ -1,0 +1,28 @@
+# zhushi
+vim plugin
+
+这是vim的一个插件, 可以注释和取消注释代码.
+
+支持python, php, c 未调试
+
+建议设置
+```
+let mapleader=","
+map <leader>a :call Za()<CR>
+map <leader>z :call Zhushi()<CR>
+map <leader>q :call Quxiaozhushi()<CR>
+```
+
+函数Za 会取消或注释代码
+
+函数Zhushi 只会注释代码,如果代码已经被注释了, 还会加一层注释
+
+函数Quxiaozhushi 只会取消注释
+
+###多行注释:
+
+`3,z`  注释3行
+
+
+
+
