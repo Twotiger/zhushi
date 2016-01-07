@@ -3,6 +3,10 @@ vim plugin
 
 这是vim的一个插件, 可以注释和取消注释代码.
 
+###需求
+vim 要支持 python
+
+
 支持python, vim, c 未调试
 
 建议设置
