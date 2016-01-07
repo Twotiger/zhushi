@@ -104,13 +104,3 @@ def main():
 main()
 EOF
 endfunction
-
-
-
-
-
-
-map <leader>a :call Za()<CR>
-map <leader>z :call Zhushi()<CR>
-map <leader>q :call Quxiaozhushi()<CR>
-
