@@ -12,11 +12,11 @@ if start > end :
 
 
 def note(notestr):
-    if cur_buf[start].startswith(notestr):
+    if (cur_buf[start]).lstrip().startswith(notestr):
         # 取消注释
         for i in range(start, end+1):
             if cur_buf[i]:
-                cur_buf[i] = cur_buf[i][len(notestr):]
+                cur_buf[i] = cur_buf[i].replace(notestr, '', 1)
 
     else:
         #  注释
