@@ -23,6 +23,13 @@ map <leader>q :call Quxiaozhushi()<CR>
 
 函数Quxiaozhushi 只会取消注释
 
+###Vundle 安装
+`Plugin 'Twotiger/zhushi'`
+
+###手动安装
+复制plugin/zhushi.vim 到自己plugin的目录下
+
+
 ###多行注释:
 
 `3,z`  注释3行
