@@ -41,8 +41,9 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype == 'c' or filetype == 'php':
         note('//')
+
 
 
 main()
@@ -76,7 +77,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype == 'c' or filetype == 'php':
         note('//')
 
 
@@ -107,7 +108,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype == 'c' or filetype == 'php':
         note('//')
 
 main()
