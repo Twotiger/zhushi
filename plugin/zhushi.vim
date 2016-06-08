@@ -54,11 +54,11 @@ def fb(notestr):
     
 def main():
     filetype = vim.eval('&filetype')
-    if filetype == 'python': # if filetype is python
+    if filetype in ("python", "cucumber"): # if filetype is python
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype == 'c' or filetype == "javascript":
         note('//')
     elif filetype == 'htmldjango':
         fb(('{#', '#}'))
@@ -97,7 +97,7 @@ def fb(notestr):
 
 def main():
     filetype = vim.eval('&filetype')
-    if filetype == 'python': # if filetype is python
+    if filetype in ("python", "cucumber"):
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
@@ -142,7 +142,7 @@ def fb(notestr):
 
 def main():
     filetype = vim.eval('&filetype')
-    if filetype == 'python': # if filetype is python
+    if filetype in ("python", "cucumber"):
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
