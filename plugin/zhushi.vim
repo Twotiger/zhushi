@@ -58,7 +58,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c' or filetype == "javascript":
+    elif filetype in("c", "javascript", "javascript.jsx"):
         note('//')
     elif filetype == 'htmldjango':
         fb(('{#', '#}'))
@@ -101,7 +101,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype in("c", "javascript", "javascript.jsx"):
         note('//')
     elif filetype == 'htmldjango':
         fb(("{#", "#}"))
@@ -146,7 +146,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype == 'c':
+    elif filetype in("c", "javascript", "javascript.jsx"):
         note('//')
     elif filetype == 'htmldjango':
         fb(("{#", "#}"))
