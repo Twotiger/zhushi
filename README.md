@@ -7,7 +7,9 @@ vim plugin
 vim 要支持 python
 
 
-支持python, vim, c 未调试
+支持python, vim, c , javascript
+
+javascript 中可以支持jsx格式语法,需要安装[vim-jsx](https://github.com/mxw/vim-jsx)
 
 建议设置
 ```
