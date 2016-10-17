@@ -64,6 +64,8 @@ def main():
         fb(('{#', '#}'))
     elif filetype == 'html':
         fb(('<!--', '-->'))
+    elif filetype == 'css':
+        fb(("/*","*/"))
         
 main()
 #print filetype,'ok'
@@ -107,6 +109,8 @@ def main():
         fb(("{#", "#}"))
     elif filetype == 'html':
         fb(("<!--", "-->"))
+    elif filetype == 'css':
+        fb(("/*","*/"))
 main()
 EOF
 endfunction
@@ -152,6 +156,8 @@ def main():
         fb(("{#", "#}"))
     elif filetype == 'html':
         fb(("<!--", "-->"))
+    elif filetype == 'css':
+        fb(("/*","*/"))
     
 
 main()
