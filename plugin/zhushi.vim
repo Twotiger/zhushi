@@ -58,7 +58,7 @@ def main():
         note('#')
     elif filetype == 'vim':   # if filetype is vim
         note('"')
-    elif filetype in("c", "javascript", "javascript.jsx", "cpp"):
+    elif filetype in("c", "javascript", "cpp"):
         note('//')
     elif filetype == 'htmldjango':
         fb(('{#', '#}'))
@@ -66,6 +66,8 @@ def main():
         fb(('<!--', '-->'))
     elif filetype == 'css':
         fb(("/*","*/"))
+    elif filetype == "javascript.jsx":
+        fb(('{/*', '*/}'))
         
 main()
 #print filetype,'ok'
