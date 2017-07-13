@@ -56,7 +56,7 @@ def fb(notestr, flag=None):
                         break
 
 
-def main(flag):
+def main(flag=None):
     filetype = vim.eval('&filetype')
     if filetype in ("python", "cucumber"): # 
         note('#', flag)
@@ -73,10 +73,3 @@ def main(flag):
     elif filetype == "javascript.jsx":
         fb(('{/*', '*/}'))
 
-
-if 'z' in sys.argv:
-    main('z')
-elif 'q' in sys.argv:
-    main('q')
-else:
-    main()
