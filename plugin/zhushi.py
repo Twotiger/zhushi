@@ -66,7 +66,7 @@ def main(flag=None):
         note('//')
     elif filetype == 'htmldjango':
         fb(('{#', '#}'))
-    elif filetype == 'html':
+    elif filetype in ('html', 'vue'):
         fb(('<!--', '-->'))
     elif filetype == 'css':
         fb(("/*", "*/"))

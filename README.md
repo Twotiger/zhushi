@@ -8,9 +8,10 @@ vim 要支持 python
 
 
 ### 支持语言
-`python`  `vim` `c` `javascript` `cucumber` `htmldjango` `html` `css` `javascript.jsx`
+`python`  `vim` `c` `javascript` `cucumber` `htmldjango` `html` `css` `javascript.jsx` `vue`
 
 javascript.jsx,需要安装[vim-jsx](https://github.com/mxw/vim-jsx)
+vue 需要安装[posva/vim-vue](https://github.com/posva/vim-vue)
 
 建议设置
 ```
