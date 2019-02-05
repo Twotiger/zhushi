@@ -3,22 +3,23 @@ import vim
 import sys
 
 
-cur_buf = vim.current.buffer
-start = vim.current.range.start
-end = vim.current.range.end
-if start > end:
-    start, end = end, start
 
 def note(notestr, flag=None):
-    if flag == 'q' or (cur_buf[start]).lstrip().startswith(notestr):
+    cur_buf = vim.current.buffer
+    start = vim.current.range.start
+    end = vim.current.range.end
+    if start > end:
+        start, end = end, start
+
+    if flag == 'q' or (flag is None and (cur_buf[start]).lstrip().startswith(notestr)):
         # 取消注释
         for i in range(start, end + 1):
-            if cur_buf[i]:
-                code = cur_buf[i].replace('%s '% notestr, '', 1)
-            if code == cur_buf[i]: # 预防碰到 #s = 'b'
-                cur_buf[i] = cur_buf[i].replace(notestr, '', 1)
-            else:# '18
-                cur_buf[i] = code
+            if cur_buf[i].lstrip().startswith(notestr):
+                cur_buf[i] = cur_buf[i].replace('%s '% notestr, '', 1)
+            # if code == cur_buf[i]: 
+                # cur_buf[i] = cur_buf[i].replace(notestr, '', 1)
+            #else: 
+            #    cur_buf[i] = code
     else: 
         # 注释
         for i in range(start, end+1):
@@ -27,11 +28,16 @@ def note(notestr, flag=None):
                 for num, j in enumerate(cur_buf[i]):
                     if j.isspace():
                         front += j
-                    else: # 'asdf2'
+                    else: 
                         cur_buf[i] = front + notestr + ' ' + cur_buf[i][num:]    
                         break
 
 def fb(notestr, flag=None):
+    cur_buf = vim.current.buffer
+    start = vim.current.range.start
+    end = vim.current.range.end
+    if start > end:
+        start, end = end, start
     if flag == 'q' or cur_buf[start].lstrip().startswith(notestr[0]):
         # 取消注释
         for i in range(start, end + 1):
@@ -63,13 +69,13 @@ def main(flag=None):
     elif filetype == 'vim':   # if filetype is vim
         note('"', flag)
     elif filetype in("c", "javascript", "cpp"):
-        note('//')
+        note('//', flag)
     elif filetype == 'htmldjango':
-        fb(('{#', '#}'))
+        fb(('{#', '#}'), flag)
     elif filetype in ('html', 'vue'):
-        fb(('<!--', '-->'))
+        fb(('<!--', '-->'), flag)
     elif filetype == 'css':
-        fb(("/*", "*/"))
+        fb(("/*", "*/"), flag)
     elif filetype == "javascript.jsx":
-        fb(('{/*', '*/}'))
+        fb(('{/*', '*/}'), flag)
 
