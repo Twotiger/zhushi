@@ -68,7 +68,7 @@ def main(flag=None):
         note('#', flag)
     elif filetype == 'vim':   # if filetype is vim
         note('"', flag)
-    elif filetype in("c", "javascript", "cpp"):
+    elif filetype in("c", "javascript", "cpp", "go"):
         note('//', flag)
     elif filetype == 'htmldjango':
         fb(('{#', '#}'), flag)
